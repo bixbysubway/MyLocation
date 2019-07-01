@@ -1,0 +1,29 @@
+capsule {
+  id (playground.example)
+  version (0.1.0)
+  format (3)
+  targets {
+    target (bixby-mobile-en-US)
+    target (bixby-mobile-ko-KR)
+  }
+  capsule-imports{
+    // 라이브러리 사용하는 함수
+    import (viv.core){
+      as(core)
+    }
+    import (viv.geo){
+      as(geo)
+      version (9.17.4)
+      //해당 버전의 geo 라이브러리를 geo라는 별칭으로 사용
+    }
+  }
+  
+    runtime-flags{
+    support-halt-effect-in-computed-inputs
+    modern-prompt-rejection
+    concepts-inherit-super-type-features
+  }
+  permissions{ //개인정보 (위치)를 사용할때 동의필요
+    user-profile-access
+  }
+}

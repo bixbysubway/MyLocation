@@ -1,0 +1,14 @@
+endpoints {
+  
+  authorization {
+    none
+  }
+  
+  
+  action-endpoints {
+    action-endpoint (GetCurrentPosition) {
+      accepted-inputs (point)
+      local-endpoint ("getCurrentPosition.js")
+    }
+  }
+}
